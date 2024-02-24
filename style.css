@@ -1,0 +1,286 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+.project-container {
+  min-width: 1000px;
+  max-width: 1440px;
+  margin: 100px;
+  margin-top: 0px;
+  height: 100vw;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 150px 600px 150px;
+  grid-template-areas:
+    "header  header"
+    "main  aside"
+    "footer footer";
+}
+/* 
+==========================================
+HEADER
+==========================================
+*/
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#logo {
+  height: 40px;
+}
+.nav {
+  display: flex;
+  justify-content: ;
+  align-items: center;
+}
+.nav button {
+  all: unset;
+  margin-right: 30px;
+  cursor: pointer;
+}
+.nav button:hover {
+  color: hsl(5, 85%, 63%);
+}
+/* 
+==================================
+MAIN
+==================================
+*/
+.main {
+  grid-area: main;
+  margin-right: 30px;
+}
+.main img {
+  width: 100%;
+}
+.blog {
+  display: flex;
+}
+.blog h1 {
+  margin-top: 30px;
+  font-weight: 800;
+  font-size: 3.5rem;
+  width: 300px;
+}
+.blog-summary {
+  margin-top: 30px;
+  margin-left: 50px;
+  padding-left: 30px;
+  width: 400px;
+  color: hsl(236, 13%, 42%);
+  line-height: 1.7rem;
+}
+.blog-summary button {
+  all: unset;
+  margin-top: 50px;
+  background-color: hsl(5, 85%, 63%);
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+.blog-summary button:hover {
+  background-color: hsl(240, 100%, 5%);
+}
+/* 
+=========================================
+ASAIDE
+=========================================
+*/
+.aside {
+  grid-area: aside;
+  background-color: hsl(240, 100%, 5%);
+  color: white;
+  padding: 20px;
+  padding-top: 40px;
+  height: 550px;
+  overflow: auto;
+}
+.aside h1 {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+.aside h3 {
+  margin-bottom: 10px;
+}
+.aside p {
+  opacity: 0.6;
+  margin-bottom: 40px;
+}
+.posts {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.29);
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+.aside h3:hover {
+  color: hsl(35, 77%, 62%);
+}
+.post-3 {
+  border-bottom: 0;
+}
+
+/* 
+===========================================
+FOOTER
+===========================================
+*/
+.footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.footer img {
+  height: 150px;
+  margin-right: 20px;
+}
+.footer h1 {
+  color: hsl(233, 8%, 79%);
+}
+.footer h4 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.footer h4:hover {
+  color: hsl(35, 77%, 62%);
+}
+.footer p {
+  color: hsl(236, 13%, 42%);
+}
+.topic {
+  display: flex;
+  width: 600px;
+  cursor: pointer;
+}
+
+.burger {
+  display: none;
+}
+#mobile-image {
+  display: none;
+}
+#burger-icon {
+  display: none;
+}
+/* 
+=======================================
+MOBILE
+=======================================
+*/
+@media (max-width: 1000px) {
+  .project-container {
+    min-width: 430px;
+    margin: 20px;
+    grid-template-columns: minmax(300px, 800px);
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "aside"
+      "footer";
+  }
+  #desktop-image {
+    display: none;
+  }
+  #mobile-image {
+    display: block;
+    width: auto;
+  }
+  #burger-icon {
+    display: block;
+    margin-right: 20px;
+    height: 25px;
+    cursor: pointer;
+  }
+  .nav {
+    display: none;
+  }
+  .header {
+    justify-content: space-between;
+  }
+  .main .aside .header {
+    margin-bottom: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .item {
+    margin-bottom: 40px;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .blog {
+    flex-direction: column;
+    align-items: start;
+  }
+  .blog-summary {
+    margin-top: 20px;
+    margin-left: 0;
+    padding: 0;
+    font-size: 1.2rem;
+  }
+  .footer {
+    flex-direction: column;
+  }
+  .topic {
+    margin-bottom: 40px;
+    padding-right: 40px;
+  }
+  /* 
+  ============================================
+  BURGER
+  
+  */
+  .burger {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 70%;
+    z-index: 5;
+    background-color: white;
+    color: hsl(240, 100%, 5%);
+  }
+  .burger nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 50px;
+    margin-top: 200px;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .burger button {
+    margin-bottom: 40px;
+  }
+  .burger img {
+    position: fixed;
+    height: 50px;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+  }
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 3;
+  }
+}
